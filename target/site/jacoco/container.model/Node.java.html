@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Node.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab</a> &gt; <a href="index.source.html" class="el_package">container.model</a> &gt; <span class="el_source">Node.java</span></div><h1>Node.java</h1><pre class="source lang-java linenums">package container.model;
+
+import java.util.concurrent.atomic.AtomicMarkableReference;
+
+public class Node&lt;T extends Comparable&lt;T&gt;&gt; {
+    private T value;
+    private final AtomicMarkableReference&lt;Node&lt;T&gt;&gt; next;
+
+<span class="fc" id="L9">    public Node(T value, Node&lt;T&gt; next) {</span>
+<span class="fc" id="L10">        this.value = value;</span>
+<span class="fc" id="L11">        this.next = new AtomicMarkableReference&lt;Node&lt;T&gt;&gt;(next, false);</span>
+<span class="fc" id="L12">    }</span>
+
+    public T value() {
+<span class="fc" id="L15">        return value;</span>
+    }
+
+    public Node&lt;T&gt; getNext() {
+<span class="fc" id="L19">        return next.getReference();</span>
+    }
+
+    public boolean casNext(Node&lt;T&gt; old, Node&lt;T&gt; next) {
+<span class="fc" id="L23">        return this.next.compareAndSet(old, next, false, false);</span>
+    }
+
+    public boolean mark(Node&lt;T&gt; next) {
+<span class="nc" id="L27">        return this.next.compareAndSet(next, next, false, true);</span>
+    }
+
+    public boolean isMarked() {
+<span class="fc" id="L31">        return next.isMarked();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LockFreeSet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab</a> &gt; <a href="index.source.html" class="el_package">container</a> &gt; <span class="el_source">LockFreeSet.java</span></div><h1>LockFreeSet.java</h1><pre class="source lang-java linenums">package container;
+
+import container.model.Node;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class LockFreeSet&lt;T extends Comparable&lt;T&gt;&gt; implements ILockFreeSet&lt;T&gt; {
+    private Node&lt;T&gt; head;
+
+<span class="fc" id="L9">    public LockFreeSet() {</span>
+<span class="fc" id="L10">        this.head = new Node&lt;T&gt;(null, null);</span>
+<span class="fc" id="L11">    }</span>
+
+    @Override
+    public boolean add(T value) {
+        while (true) {
+<span class="fc" id="L16">            Pair&lt;T&gt; pair = search(value);</span>
+<span class="fc" id="L17">            Node&lt;T&gt; prev = pair.prev;</span>
+<span class="fc" id="L18">            Node&lt;T&gt; curr = pair.curr;</span>
+
+<span class="pc bpc" id="L20" title="3 of 4 branches missed.">            if (curr != null &amp;&amp; curr.value().compareTo(value) == 0) {</span>
+<span class="nc" id="L21">                return false;</span>
+            } else {
+<span class="fc" id="L23">                Node&lt;T&gt; node = new Node&lt;&gt;(value, curr);</span>
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">                if (prev.casNext(curr, node)) {</span>
+<span class="fc" id="L25">                    return true;</span>
+                }
+            }
+<span class="nc" id="L28">        }</span>
+    }
+
+    @Override
+    public boolean remove(T value) {
+        while (true) {
+<span class="nc" id="L34">            Pair&lt;T&gt; pair = search(value);</span>
+<span class="nc" id="L35">            Node&lt;T&gt; prev = pair.prev;</span>
+<span class="nc" id="L36">            Node&lt;T&gt; curr = pair.curr;</span>
+
+<span class="nc bnc" id="L38" title="All 4 branches missed.">            if (curr == null || curr.value().compareTo(value) != 0) {</span>
+<span class="nc" id="L39">                return false;</span>
+            } else {
+<span class="nc" id="L41">                Node&lt;T&gt; next = curr.getNext();</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                if (!curr.mark(next))</span>
+<span class="nc" id="L43">                    continue;</span>
+<span class="nc" id="L44">                prev.casNext(curr, next);</span>
+<span class="nc" id="L45">                return true;</span>
+            }
+        }
+    }
+
+    @Override
+    public boolean contains(T value) {
+<span class="fc" id="L52">        Node&lt;T&gt; curr = head.getNext();</span>
+<span class="pc bpc" id="L53" title="2 of 4 branches missed.">        while (curr != null &amp;&amp; curr.value().compareTo(value) &lt; 0) {</span>
+<span class="nc" id="L54">            curr = curr.getNext();</span>
+        }
+<span class="pc bpc" id="L56" title="3 of 6 branches missed.">        return curr != null &amp;&amp; curr.value().compareTo(value) == 0 &amp;&amp; !curr.isMarked();</span>
+    }
+
+    @Override
+    public boolean isEmpty() {
+<span class="nc bnc" id="L61" title="All 2 branches missed.">        return head.getNext() == null;</span>
+    }
+
+    @Override
+    public AtomicInteger size() {
+<span class="nc" id="L66">        return null;</span>
+    }
+
+    private Pair&lt;T&gt; search(T value) {
+        retry:
+        while (true) {
+<span class="fc" id="L72">            Node&lt;T&gt; prev = head;</span>
+<span class="fc" id="L73">            Node&lt;T&gt; cur = head.getNext();</span>
+            Node&lt;T&gt; next;
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">            while (cur != null) {</span>
+<span class="nc" id="L76">                next = cur.getNext();</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">                if (cur.isMarked()) {</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">                    if (!prev.casNext(cur, next))</span>
+<span class="nc" id="L79">                        continue retry;</span>
+<span class="nc" id="L80">                    cur = next;</span>
+                } else {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">                    if (cur.value().compareTo(value) &gt;= 0)</span>
+<span class="nc" id="L83">                        return new Pair&lt;&gt;(prev, cur);</span>
+<span class="nc" id="L84">                    prev = cur;</span>
+<span class="nc" id="L85">                    cur = next;</span>
+                }
+            }
+<span class="fc" id="L88">            return new Pair&lt;&gt;(prev, null);</span>
+        }
+    }
+
+    class Pair&lt;T extends Comparable&lt;T&gt;&gt; {
+        final Node&lt;T&gt; prev, curr;
+
+<span class="fc" id="L95">        Pair(Node&lt;T&gt; prev, Node&lt;T&gt; cur) {</span>
+<span class="fc" id="L96">            this.prev = prev;</span>
+<span class="fc" id="L97">            this.curr = cur;</span>
+<span class="fc" id="L98">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
