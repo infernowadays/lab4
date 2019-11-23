@@ -40,7 +40,7 @@ public class SimpleSetTest {
                 .invocationsPerIteration(1)
                 .actorsBefore(10)
                 .iterations(5)
-                .threads(25)
+                .threads(5)
                 .actorsPerThread(3)
                 .actorsAfter(10)
                 .logLevel(LoggingLevel.INFO);
