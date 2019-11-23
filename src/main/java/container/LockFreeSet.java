@@ -1,9 +1,10 @@
 package container;
 
 import container.model.Node;
-import java.util.concurrent.atomic.AtomicInteger;
+import org.jetbrains.annotations.NotNull;
+import java.util.Iterator;
 
-public class LockFreeSet<T extends Comparable<T>> implements ILockFreeSet<T> {
+public class LockFreeSet<T extends Comparable<T>> implements ILockFreeSet<T>, Iterable<T> {
     private Node<T> head;
 
     public LockFreeSet() {
@@ -61,27 +62,41 @@ public class LockFreeSet<T extends Comparable<T>> implements ILockFreeSet<T> {
         return head.getNext() == null;
     }
 
+    public void printSet(){
+        Node<T> curr = head.getNext();
+        while (curr != null) {
+            System.out.println(curr.value());
+            curr = curr.getNext();
+        }
+    }
+
     private Pair<T> search(T value) {
         retry:
         while (true) {
             Node<T> prev = head;
-            Node<T> cur = head.getNext();
+            Node<T> curr = head.getNext();
             Node<T> next;
-            while (cur != null) {
-                next = cur.getNext();
-                if (cur.isMarked()) {
-                    if (!prev.casNext(cur, next))
+            while (curr != null) {
+                next = curr.getNext();
+                if (curr.isMarked()) {
+                    if (!prev.casNext(curr, next))
                         continue retry;
-                    cur = next;
+                    curr = next;
                 } else {
-                    if (cur.value().compareTo(value) >= 0)
-                        return new Pair<>(prev, cur);
-                    prev = cur;
-                    cur = next;
+                    if (curr.value().compareTo(value) >= 0)
+                        return new Pair<>(prev, curr);
+                    prev = curr;
+                    curr = next;
                 }
             }
             return new Pair<>(prev, null);
         }
+    }
+
+    @NotNull
+    @Override
+    public Iterator<T> iterator() {
+        return new LockFreeSetIterator<T>(this);
     }
 
     class Pair<T extends Comparable<T>> {
@@ -90,6 +105,27 @@ public class LockFreeSet<T extends Comparable<T>> implements ILockFreeSet<T> {
         Pair(Node<T> prev, Node<T> cur) {
             this.prev = prev;
             this.curr = cur;
+        }
+    }
+
+    class LockFreeSetIterator<T extends Comparable<T>> implements Iterator<T> {
+        private Node<T> current;
+
+        LockFreeSetIterator(LockFreeSet<T> lockFreeSet)
+        {
+            this.current = lockFreeSet.head.getNext();
+        }
+
+        public boolean hasNext()
+        {
+            return current != null;
+        }
+
+        public T next()
+        {
+            T node = current.value();
+            current = current.getNext();
+            return node;
         }
     }
 }
