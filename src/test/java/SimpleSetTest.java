@@ -39,9 +39,8 @@ public class SimpleSetTest {
     @Test
     public void test() {
         Options opts = new StressOptions()
-                .invocationsPerIteration(1)
                 .actorsBefore(10)
-                .iterations(10)
+                .iterations(50)
                 .threads(5)
                 .actorsPerThread(3)
                 .actorsAfter(10)
