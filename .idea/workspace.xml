@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a474dcd8-424c-4b60-aa6c-f0bc8889a08e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/container/LockFreeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/container/LockFreeSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SimpleSetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimpleSetTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,7 +24,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/container/LockFreeSet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#231#232#0" expanded="true" />
@@ -30,6 +32,15 @@
                 <element signature="e#1655#1656#0" expanded="true" />
                 <element signature="e#1700#1701#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -46,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SimpleSetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="350">
+              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#224#225#0" expanded="true" />
@@ -58,6 +69,8 @@
                 <element signature="e#501#502#0" expanded="true" />
                 <element signature="e#1099#1100#0" expanded="true" />
                 <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1190#1191#0" expanded="true" />
+                <element signature="e#1228#1229#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,7 +99,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/container/model/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/test/java/AddTest.java" />
@@ -98,6 +110,7 @@
         <option value="$PROJECT_DIR$/src/test/java/WorkerThreads.java" />
         <option value="$PROJECT_DIR$/src/test/java/MyTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/container/LockFreeSet.java" />
         <option value="$PROJECT_DIR$/src/test/java/SimpleSetTest.java" />
       </list>
@@ -297,20 +310,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574444473113</updated>
-      <workItem from="1574444475735" duration="12952000" />
+      <workItem from="1574444475735" duration="13495000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 15m 31s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 15m 40s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 17m 15s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SimpleSetTest - 2019.11.23 at 06h 18m 53s.xml">
       <configuration name="SimpleSetTest" configurationId="JUnit" />
     </history-entry>
@@ -332,9 +336,18 @@
     <history-entry file="SimpleSetTest - 2019.11.23 at 06h 28m 10s.xml">
       <configuration name="SimpleSetTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 29m 29s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 31m 51s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 35m 51s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12952000" />
+    <option name="totallyTimeSpent" value="13495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -344,7 +357,7 @@
       <window_info id="Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -354,8 +367,8 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5135428" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.35427952" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.49187434" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35427952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -371,18 +384,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/container/LockFreeSet.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -408,13 +409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -528,10 +522,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/container/LockFreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#231#232#0" expanded="true" />
@@ -544,8 +545,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SimpleSetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="350">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#224#225#0" expanded="true" />
@@ -556,6 +557,8 @@
             <element signature="e#501#502#0" expanded="true" />
             <element signature="e#1099#1100#0" expanded="true" />
             <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
           </folding>
         </state>
       </provider>

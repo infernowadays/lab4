@@ -36,13 +36,18 @@ public class SimpleSetTest {
         return set.isEmpty();
     }
 
+    @Operation
+    public int size() {
+        return set.size();
+    }
+
     @Test
     public void test() {
         Options opts = new StressOptions()
                 .actorsBefore(10)
-                .iterations(50)
+                .iterations(10)
                 .threads(5)
-                .actorsPerThread(3)
+                .actorsPerThread(2)
                 .actorsAfter(10)
                 .logLevel(LoggingLevel.INFO);
         LinChecker.check(SimpleSetTest.class, opts);

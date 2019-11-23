@@ -13,7 +13,7 @@ public interface ILockFreeSet<T> {
 
     boolean isEmpty();
 
-    AtomicInteger size();
+    int size();
 
 //    java.util.Iterator<T> iterator();
 }
