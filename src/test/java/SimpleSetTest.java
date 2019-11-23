@@ -9,6 +9,8 @@ import com.devexperts.dxlab.lincheck.strategy.stress.StressOptions;
 import container.LockFreeSet;
 import org.junit.Test;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Param(name = "value", gen = IntGen.class, conf = "1:1000")
 @StressCTest
 public class SimpleSetTest {
@@ -39,7 +41,7 @@ public class SimpleSetTest {
         Options opts = new StressOptions()
                 .invocationsPerIteration(1)
                 .actorsBefore(10)
-                .iterations(5)
+                .iterations(10)
                 .threads(5)
                 .actorsPerThread(3)
                 .actorsAfter(10)
