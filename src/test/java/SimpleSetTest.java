@@ -9,32 +9,40 @@ import com.devexperts.dxlab.lincheck.strategy.stress.StressOptions;
 import container.LockFreeSet;
 import org.junit.Test;
 
-@Param(name = "value", gen = IntGen.class, conf = "1:5")
+@Param(name = "value", gen = IntGen.class, conf = "1:1000")
 @StressCTest
 public class SimpleSetTest {
     private LockFreeSet<Integer> set = new LockFreeSet<>();
 
     @Operation
-    public Boolean add(@Param(name = "value") int value) {
+    public boolean add(@Param(name = "value") int value) {
         return set.add(value);
     }
 
     @Operation
-    public Boolean remove(@Param(name = "value") int value) {
+    public boolean remove(@Param(name = "value") int value) {
         return set.remove(value);
     }
 
     @Operation
-    public Boolean contains(@Param(name = "value") int value) {
+    public boolean contains(@Param(name = "value") int value) {
         return set.contains(value);
+    }
+
+    @Operation
+    public boolean isEmpty() {
+        return set.isEmpty();
     }
 
     @Test
     public void test() {
         Options opts = new StressOptions()
-                .iterations(50)
-                .threads(3)
-                .actorsPerThread(5)
+                .invocationsPerIteration(1)
+                .actorsBefore(10)
+                .iterations(5)
+                .threads(25)
+                .actorsPerThread(3)
+                .actorsAfter(10)
                 .logLevel(LoggingLevel.INFO);
         LinChecker.check(SimpleSetTest.class, opts);
     }

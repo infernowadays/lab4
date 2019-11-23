@@ -63,7 +63,13 @@ public class LockFreeSet<T extends Comparable<T>> implements ILockFreeSet<T> {
 
     @Override
     public AtomicInteger size() {
-        return null;
+        Node<T> curr = head.getNext();
+        AtomicInteger counter = new AtomicInteger();
+        while (curr != null) {
+            curr = curr.getNext();
+            counter.incrementAndGet();
+        }
+        return counter;
     }
 
     private Pair<T> search(T value) {
