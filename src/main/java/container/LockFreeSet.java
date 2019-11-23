@@ -61,17 +61,6 @@ public class LockFreeSet<T extends Comparable<T>> implements ILockFreeSet<T> {
         return head.getNext() == null;
     }
 
-    @Override
-    public int size() {
-        Node<T> curr = head.getNext();
-        AtomicInteger counter = new AtomicInteger();
-        while (curr != null) {
-            curr = curr.getNext();
-            counter.incrementAndGet();
-        }
-        return counter.intValue();
-    }
-
     private Pair<T> search(T value) {
         retry:
         while (true) {

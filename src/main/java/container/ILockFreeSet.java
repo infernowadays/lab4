@@ -9,11 +9,7 @@ public interface ILockFreeSet<T> {
 
     boolean contains(T value);
 
-//    Element<T> find(T value);
-
     boolean isEmpty();
-
-    int size();
 
 //    java.util.Iterator<T> iterator();
 }

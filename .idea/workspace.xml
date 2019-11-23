@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a474dcd8-424c-4b60-aa6c-f0bc8889a08e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/container/LockFreeSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/container/LockFreeSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SimpleSetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimpleSetTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/container/LockFreeSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="697">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#231#232#0" expanded="true" />
@@ -57,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SimpleSetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+            <state relative-caret-position="204">
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#224#225#0" expanded="true" />
@@ -90,6 +88,7 @@
       <find>ke</find>
       <find>sear</find>
       <find>reposi</find>
+      <find>mark</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -310,29 +309,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574444473113</updated>
-      <workItem from="1574444475735" duration="13495000" />
+      <workItem from="1574444475735" duration="13991000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 18m 53s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 21m 53s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 22m 13s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 25m 04s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 27m 32s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 27m 47s.xml">
-      <configuration name="SimpleSetTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SimpleSetTest - 2019.11.23 at 06h 28m 10s.xml">
       <configuration name="SimpleSetTest" configurationId="JUnit" />
     </history-entry>
@@ -345,19 +326,36 @@
     <history-entry file="SimpleSetTest - 2019.11.23 at 06h 35m 51s.xml">
       <configuration name="SimpleSetTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 39m 07s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 39m 19s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 42m 34s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 42m 42s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 46m 14s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleSetTest - 2019.11.23 at 06h 46m 28s.xml">
+      <configuration name="SimpleSetTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13495000" />
+    <option name="totallyTimeSpent" value="13991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -367,7 +365,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.49187434" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49187434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35427952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -522,17 +520,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/container/LockFreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="697">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#231#232#0" expanded="true" />
@@ -543,10 +534,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/container/ILockFreeSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SimpleSetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="204">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#224#225#0" expanded="true" />
